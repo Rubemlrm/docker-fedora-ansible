@@ -23,7 +23,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: docker/setup-qemu-action@v1
       - uses: docker/setup-buildx-action@v1
-
       - name: Log in to the Container registry
         uses: docker/login-action@v1
         with:
@@ -36,5 +35,5 @@ jobs:
           context: ./
           file: "Dockerfile-${{ matrix.version }}"
           push: true
-          tags: "rubemlrm/fedora-ansible"
+          tags: "rubemlrm/fedora-ansible:${{ matrix.version }}"
           labels: ${{ matrix.version }}
