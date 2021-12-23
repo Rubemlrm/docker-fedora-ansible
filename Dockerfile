@@ -1,4 +1,4 @@
-FROM fedora:rawhide
+FROM fedora:$VERSION
 LABEL maintainer="Rubem Mota"
 ENV container=docker
 
