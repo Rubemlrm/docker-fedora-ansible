@@ -14,12 +14,9 @@ jobs:
       packages: write
     strategy:
       matrix:
-        version: ["36", "37", "38", "rawhide" ]
+        version: ["37", "38", "39", "rawhide" ]
     steps:
-      - uses: actions/checkout@v2
-      - uses: gautamkrishnar/keepalive-workflow@master
-        with:
-          time_elapsed: 20
+      - uses: actions/checkout@v3
       - name: set fedora base docker version
         run: |
           sed -i -e "s|\$VERSION|${{ matrix.version }}|g" Dockerfile
