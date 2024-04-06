@@ -14,7 +14,7 @@ jobs:
       packages: write
     strategy:
       matrix:
-        version: ["37", "38", "39", "rawhide" ]
+        version: ["38", "39", "40", "rawhide" ]
     steps:
       - uses: actions/checkout@v4
       - name: set fedora base docker version
